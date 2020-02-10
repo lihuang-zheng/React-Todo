@@ -56,8 +56,8 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>Welcome to your Todo App!</h1>
+      <div className="App">
+        <h1>- > Simple Do.</h1>
 
         <div className="header">
           <h2>Your Todo</h2>
