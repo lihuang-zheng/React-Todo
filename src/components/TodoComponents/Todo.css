@@ -19,7 +19,6 @@ h4,
 h5,
 h6,
 div,
-p,
 span {
   color: black;
   font-family: "Roboto", sans-serif;
@@ -53,6 +52,7 @@ h1 {
 
 .item {
   background-color: #ff8a71;
+  color: white;
   width: 45%;
   text-align: left;
   margin: 4px 0;
@@ -73,7 +73,7 @@ form {
 }
 
 form > input {
-  background-color: #dfdfdf;
+  background-color: #c4c4c4;
   border: 0;
   padding: 6px 4px;
   font-size: 1rem;
