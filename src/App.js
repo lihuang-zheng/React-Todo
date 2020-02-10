@@ -12,6 +12,45 @@ class App extends React.Component {
   // you will need a place to store your state in this component.
   // design `App` to be the parent component of your application.
   // this component is going to take care of state, and any change handlers you need to work with your state
+
+  //setup constructor for this.
+  constructor() {
+    super();
+    this.state = {
+      todoList: todo
+    };
+  }
+
+  // add toggle feature to the to-do list.
+  toggleItem = clickedId => {
+    const newTodoList = this.state.todoList.map(item => {
+      if (item.id === clickedId) {
+        return {
+          ...item,
+          completed: !item.completed
+        };
+      } else {
+        return item;
+      }
+    });
+    // update state with the new array
+    this.setState({
+      todoList: newTodoList
+    });
+  };
+
+  // add add new todo function
+  addNewItem = itemText => {
+    const newItem = {
+      name: itemText,
+      id: Date.now(),
+      completed: false
+    };
+    this.setState({
+      todoList: [...this.state.todoList, newItem]
+    });
+  };
+
   render() {
     return (
       <div>
@@ -19,10 +58,10 @@ class App extends React.Component {
 
         <div className="header">
           <h2>Your Todo</h2>
-          <TodoForm />
+          <TodoForm addNewItem={this.addNewItem} />
         </div>
 
-        <TodoList />
+        <TodoList todo={this.state.todoList} toggleItem={this.toggleItem} />
       </div>
     );
   }
