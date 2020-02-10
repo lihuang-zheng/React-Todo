@@ -42,6 +42,15 @@ class App extends React.Component {
     });
   };
 
+  // add clear feature to clear the to-do list.
+  clearCompleted = event => {
+    const clearTodoList = this.state.todoList.filter(item => !item.completed);
+    this.setState({
+      todoList: clearTodoList
+    });
+    event.preventDefault();
+  };
+
   // add add new todo function
   addNewItem = itemText => {
     const newItem = {
@@ -64,7 +73,11 @@ class App extends React.Component {
           <TodoForm addNewItem={this.addNewItem} />
         </div>
 
-        <TodoList todo={this.state.todoList} toggleItem={this.toggleItem} />
+        <TodoList
+          todo={this.state.todoList}
+          toggleItem={this.toggleItem}
+          clearCompleted={this.clearCompleted}
+        />
       </div>
     );
   }
