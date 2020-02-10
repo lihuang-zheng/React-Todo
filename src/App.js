@@ -57,7 +57,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <h1>- > Simple Do.</h1>
+        <h1>> Simple To Do.</h1>
 
         <div className="header">
           <h2>Your Todo</h2>
