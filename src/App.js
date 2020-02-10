@@ -7,6 +7,9 @@ import TodoForm from "./components/TodoComponents/TodoForm";
 //import style for the todo.
 import "./components/TodoComponents/Todo.css";
 
+//setup data of the todo
+const todo = [];
+
 //setup app structure for to-do list.
 class App extends React.Component {
   // you will need a place to store your state in this component.
